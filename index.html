@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Test task</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="controls__wrapper">
+            <div class="controls">
+                <label htmlFor="storageInput" class="controls__label">Storage: <span id="storageValue" class="controls__label-span">0 GB</span></label>
+                <input id="storageInput" type="range" min="0" max="1000" value="0">
+            </div>
+            <div class="controls">
+                <label htmlFor="transferInput" class="controls__label">Transfer: <span id="transferValue">0 GB</span></label>
+                <input id="transferInput" type="range" min="0" max="1000" value="0">
+            </div>
+        </div>
+        <ul id="companyList"></ul>
+    </div>
+    <script type="module" src="./js/script.js"></script>
+</body>
+</html>
