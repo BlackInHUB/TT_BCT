@@ -36,9 +36,10 @@ body {
 }
 
 .wrapper {
-    width: 60%;
+    max-width: 700px;
     padding: 20px;
-    border: 2px solid black;
+    border: 2px solid grey;
+    border-radius: 20px;
     margin: 0 auto;
 }
 
@@ -54,56 +55,66 @@ body {
     flex-direction: column;
     text-align: center;
     width: 30%;
-    font-size: 30px;
+    font-size: 15px;
 }
 
 .controls__label {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.companyList__item {
-    display: flex;
-    align-items: center;
-}
-
-.companyList__item-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px 0 10px;
-    width: 20%;
-}
-
-.companyList__item-name {
-    margin-bottom: 5px;
-}
-
-.companyList__item:not(:last-child) {
-    margin-bottom: 20px;
-}
-
-.companyList__item-line {
-    width: 0px;
-    height: 40px;
-    border: transparent;
-    background-color: #c1c4c9;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    margin-right: 5px;
-    transition: all 250ms linear;
-}
-
-.companyList__item-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border: 2px solid black;
-}
-
-.radioContainer__label input {
-    margin-right: 5px;
+@media screen and (min-width: 768px) {   
+    .controls {
+        font-size: 25px;
+    }
+    
+    .controls__label {
+        margin-bottom: 20px;
+    }
+    
+    .companyList__item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .companyList__item-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px 0 10px;
+        width: 200px;
+    }
+    
+    .companyList__item-name {
+        margin-bottom: 5px;
+    }
+    
+    .companyList__item:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    
+    .companyList__item-line {
+        width: 0px;
+        height: 40px;
+        border: transparent;
+        background-color: #c1c4c9;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-right: 5px;
+        transition: all 250ms linear;
+    }
+    
+    .companyList__item-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border: 2px solid black;
+    }
+    
+    .radioContainer__label input {
+        margin-right: 5px;
+    }
 }

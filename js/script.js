@@ -9,6 +9,8 @@ const companyList = document.getElementById('companyList');
 
 companyList.insertAdjacentHTML('afterbegin', markup)
 
+console.log(screen.width)
+
 let storage = 0;
 let transfer = 0;
 
@@ -23,7 +25,7 @@ const handleChange = (e) => {
 
     prices.map(item => {
         const line = document.getElementById(`${item.name}-line`);
-        line.style.cssText = item.price <= min ? `width: ${item.price * 9}px; background-color: ${item.color};` : `width: ${item.price * 9}px;`;
+        line.style.cssText = item.price <= min ? `width: ${item.price * 5}px; background-color: ${item.color};` : `width: ${item.price * 5}px;`;
         const price = document.getElementById(`${item.name}-price`);
         price.innerHTML = item.price.toFixed(2);
     })
