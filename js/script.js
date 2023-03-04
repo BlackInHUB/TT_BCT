@@ -11,7 +11,7 @@ companyList.insertAdjacentHTML('afterbegin', markup)
 
 let storage = 0;
 let transfer = 0;
-let windowWidth = 0;
+let windowWidth;
 
 const handleWindowWidth = () => {
     windowWidth = window.innerWidth;
@@ -21,20 +21,19 @@ const handleChange = (e) => {
     e.target.id === 'storageInput' ? storage = e.target.value : transfer = e.target.value;
     storageOutput.innerHTML = storage + ' ' + 'GB';
     transferOutput.innerHTML = transfer + ' ' + 'GB';
-    
+
     const prices = calculate(storage, transfer);
     
     const min = Math.min(...prices.map(item => item.price));
 
     prices.map(item => {
-
         const line = document.getElementById(`${item.name}-line`);
+
+        line.style.cssText = item.price <= min ? `width: ${item.price * 5}px; height: 40px; background-color: ${item.color};` : `width: ${item.price * 5}px; height: 40px;`;
         if (windowWidth < 768) {
             line.style.cssText = item.price <= min ? `height: ${item.price * 5}px; width: 40px; background-color: ${item.color};` : `height: ${item.price * 5}px; width: 40px;`;
         }
-        if (windowWidth >= 768) {
-            line.style.cssText = item.price <= min ? `width: ${item.price * 5}px; height: 40px; background-color: ${item.color};` : `width: ${item.price * 5}px; height: 40px;`;
-        }
+        
         const price = document.getElementById(`${item.name}-price`);
         price.innerHTML = item.price.toFixed(2);
     })
@@ -67,7 +66,6 @@ const calculate = (storage, transfer) => {
 
     return prices;
 };
-
 
 controlsContainer.addEventListener('input', handleChange);
 window.addEventListener('resize', handleWindowWidth);
