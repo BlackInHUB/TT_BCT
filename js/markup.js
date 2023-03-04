@@ -15,13 +15,15 @@ export const markup = data.map(item => {
 
         return `<li class="companyList__item">
                     <div class="companyList__item-info">
-                        <div>
+                        <div class="companyList__name-wrapper">
                             <p class="companyList__item-name">${item.name}</p>
                             ${storageToRender}
                         </div>
                         <div class="companyList__item-icon">Icon</div>
                     </div>
-                    <div id="${item.name}-line" class="companyList__item-line"></div>
-                    <p><span id="${item.name}-price">0</span>$</p>
+                    <div class="companyList__line-wrapper">
+                        <div id="${item.name}-line" class="companyList__item-line"></div>
+                        <p><span id="${item.name}-price">0</span>$</p>
+                    </div>
                 </li>`
 }).join('');
